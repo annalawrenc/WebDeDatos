@@ -1,0 +1,129 @@
+<!--Ejercicio 1_2-->
+
+<!-- Dado los datos que tenemos en Ejercicio2_data.xml:
+
+
+id_fb		content			creator		likes	creation_date
+fb101		"Un post"		user201		123		12/02/2015
+fb102		"dost post"		user202		23		16/02/2015
+				
+				
+id_twiiter	content			creator	retweets	creation_date
+tweet111	"Un tweet"		user211	22			12/03/2015
+tweet112	"dost tweets"	user212	89			16/01/2015
+tweet113	"Tres tweets"	user213	12			17/01/2015
+				
+				
+userID		userAccount		userName		
+user201		er_Antonio		Antonio Rueda		
+user202		pecosa			Mercerdes Valverde		
+user211		"@pepe"			Jose Maria Fuentes		
+user212		"@juan"			Juanito Valderrama		
+				
+				
+				
+id_p		keywords		contiene		
+p301		"un"			fb101,tweet111		
+p302		"dos"			fb102, tweet112		
+p303		"tres"			tweet113		
+
+
+Crear un modelo RDF donde aparezcan los siguientes recursos descritos: “fb101”, “tweet111”, “user201”, “user211”, “p301”, “p301-fb101”.
+
+Pistas:
+Vamos a dar identificadores únicos a los recursos y que además sean localizables en internet. Ejemplo: (http://www.example.com/myprimerrdf#nambreconcreto“) 
+Vamos a describir algo sobre el, vamos a describir las características mediante “properties” in RDF terminología. 
+Para ellos se crearan una serie de propiedades con el namespace: http://www.example.com/myprimerrdf#.
+-->
+
+<?xml version="1.0" encoding="UTF-8"?>
+
+<rdf:RDF
+xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+xmlns:dc="http://purl.org/dc/elements/1.1/"
+xmlns:dcterms="http://purl.org/dc/terms/"
+xmlns:sioc="http://rdfs.org/sioc/spec/"
+xmlns:myNameSpace="http://www.example.com/myprimerrdf#"
+xml:base="http://www.example.com/myprimerrdf"
+xmlsn:="http://www.example.com/myprimerrdf#">
+
+
+
+<rdf:Description rdf:about="fb101">
+<Mynamespace:content>Un post</Mynamespace:content>
+<Mynamespace:creator rdf:resource:"user201" />
+<Mynamespace:likes>123<Mynamespace:likes>
+<Mynamespace:creation_date>12/02/2015</Mynamespace:creation_date>
+</rdf:Description>
+
+<rdf:Description rdf:about="fb102">
+<Mynamespace:content>dost post</Mynamespace:content>
+<Mynamespace:creator rdf:resource:"user202" />
+<Mynamespace:likes>23<Mynamespace:likes>
+<Mynamespace:creation_date>16/02/2015</Mynamespace:creation_date>
+</rdf:Description>
+
+
+
+<rdf:Description rdf:about="tweet111">
+<Mynamespace:content>Un tweet</Mynamespace:content>
+<Mynamespace:creator rdf:resource:"user211" />
+<Mynamespace:retweets>22</Mynamespace:retweets>
+<Mynamespace:creation_date>12/03/2015</Mynamespace:creation_date>
+</rdf:Description>
+
+<rdf:Description rdf:about="tweet112">
+<Mynamespace:content>dost tweets</Mynamespace:content>
+<Mynamespace:creator rdf:resource:"user212" />
+<Mynamespace:retweets>89</Mynamespace:retweets>
+<Mynamespace:creation_date>16/01/2015</Mynamespace:creation_date>
+</rdf:Description>
+
+<rdf:Description rdf:about="tweet113">
+<Mynamespace:content>tres tweets</Mynamespace:content>
+<Mynamespace:creator rdf:resource:"user213" />
+<Mynamespace:retweets>12</Mynamespace:retweets>
+<Mynamespace:creation_date>17/01/2015</Mynamespace:creation_date>
+</rdf:Description>
+
+
+
+<rdf:Description rdf:about="user201">
+<Mynamespace:userAccount>er_Antonio</Mynamespace:userAccount>
+<Mynamespace:userName>Antonio Rueda<Mynamespace:userName>
+</rdf:Description>
+
+<rdf:Description rdf:about="user202">
+<Mynamespace:userAccount>pecosa</Mynamespace:userAccount>
+<Mynamespace:userName>Mercerdes Valverde<Mynamespace:userName>
+</rdf:Description>
+
+<rdf:Description rdf:about="user211">
+<Mynamespace:userAccount>@pepe</Mynamespace:userAccount>
+<Mynamespace:userName>Jose Maria Fuentes<Mynamespace:userName>
+</rdf:Description>
+
+<rdf:Description rdf:about="user212">
+<Mynamespace:userAccount>@juan</Mynamespace:userAccount>
+<Mynamespace:userName>Juanito Valderrama<Mynamespace:userName>
+</rdf:Description>
+
+
+
+<rdf:Description rdf:about="p301">
+<Mynamespace:keywords>un</Mynamespace:keywords>
+<Mynamespace:contiene>fb101,tweet111</Mynamespace:contiene>
+</rdf:Description>
+
+<rdf:Description rdf:about="p302">
+<Mynamespace:keywords>dos</Mynamespace:keywords>
+<Mynamespace:contiene>fb102,tweet112</Mynamespace:contiene>
+</rdf:Description>
+
+<rdf:Description rdf:about="p301">
+<Mynamespace:keywords>tres</Mynamespace:keywords>
+<Mynamespace:contiene>tweet113</Mynamespace:contiene>
+</rdf:Description>
+
+
+</rdf:RDF>
