@@ -63,7 +63,7 @@ xmlsn:="http://www.example.com/myprimerrdf#">
 
 <Tweet rdf:about="tweet111">
 
-</rdf:Tweet>
+<Tweet>
 
 
 <User rdf:about="user201">
