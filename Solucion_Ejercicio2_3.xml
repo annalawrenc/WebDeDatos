@@ -53,7 +53,7 @@ xmlsn:="http://www.example.com/myprimerrdf#">
 <Tweet rdf:about="tweet111">
 <sioc:has_creator rdf:resource:"user211" />
 <sioc:content>Un tweet</sioc:content>
-</rdf:Tweet>
+</Tweet>
 
 
 <User rdf:about="user201">
