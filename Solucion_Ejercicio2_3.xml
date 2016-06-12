@@ -33,7 +33,7 @@ xmlsn:="http://www.example.com/myprimerrdf#">
 <rdf:Property rdf: about ="#userAccount"/>
 
 
-<rdfs:Property rdf: about ="#content">
+<rdfs:Property sioc: about ="#content">
 	<rdfs:domain rdf:resource ="Tweet">
 </rdfs:Property>
 
