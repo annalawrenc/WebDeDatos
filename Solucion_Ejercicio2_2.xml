@@ -1,4 +1,4 @@
-<!--Ejercicio 2_1-->
+<!--Ejercicio 2_2-->
 
 <!-- 
 
@@ -54,7 +54,7 @@ xmlsn:="http://www.example.com/myprimerrdf#">
 <Tweet rdf:about="tweet111">
 <creator rdf:resource:"user211" />
 <content>Un tweet</content>
-</rdf:Tweet>
+</Tweet>
 
 
 <User rdf:about="user201">
