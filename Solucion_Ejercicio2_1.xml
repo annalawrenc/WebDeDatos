@@ -1,0 +1,74 @@
+<!--Ejercicio 2_1-->
+
+<!-- 
+
+Creación usando RDFS de las siguientes clases, propiedades e instancias:
+
+- Creación de las clases RDFS: “Tweet” y “User”
+
+- Creación de las propiedades: 
+
+	“content”: Un Tweet tiene un contenido (content) de tipo texto.
+
+	“creator”: Un Tweet tiene un creador (creator) de tipo User
+
+	“userAccount”: Un User tiene una cuenta de usuario.
+
+- Creación de los individuos:
+
+“tweet111” de la claseTweet
+
+“user201” de la clase User
+
+-->
+
+<?xml version="1.0" encoding="UTF-8"?>
+
+<rdf:RDF
+xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+xmlns:dc="http://purl.org/dc/elements/1.1/"
+xmlns:dcterms="http://purl.org/dc/terms/"
+xmlns:sioc="http://rdfs.org/sioc/spec/"
+xmlns:myNameSpace="http://www.example.com/myprimerrdf#"
+xml:base="http://www.example.com/myprimerrdf"
+xmlsn:="http://www.example.com/myprimerrdf#">
+
+<!-- Creación de las clases RDFS: “Tweet” y “User” -->
+
+<rdfs:Class rdf:about="#User"/>
+<rdfs:Class rdf:about="#Tweet"/>
+
+<!-- Creación de las propiedades: “content”,“creator”, “userAccount” -->
+
+<rdf:Property rdf: about ="#content"/>
+<rdf:Property rdf: about ="#creator"/>
+<rdf:Property rdf: about ="#userAccount"/>
+
+
+<rdfs:Property rdf: about ="#content">
+	<rdfs:domain rdf:resource ="Tweet">
+</rdfs:Property>
+
+<rdfs:Property rdf: about ="#creator">
+	<rdfs:domain rdf:resource ="Tweet">
+	<rdfs:domain rdf:resource ="User">
+</rdfs:Property>
+
+<rdfs:Property rdf: about ="#userAccount">
+	<rdfs:domain rdf:resource ="User">
+</rdfs:Property>
+
+<!-- Creación de los individuos: “tweet111”, user201”-->
+
+
+<Tweet rdf:about="tweet111">
+
+</rdf:Tweet>
+
+
+<User rdf:about="user201">
+
+</User>
+
+
+</rdf:RDF>
