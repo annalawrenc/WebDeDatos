@@ -1,25 +1,13 @@
-<!--Ejercicio 2_1-->
+<!--Ejercicio 2_3-->
 
 <!-- 
 
-Creación usando RDFS de las siguientes clases, propiedades e instancias:
 
-- Creación de las clases RDFS: “Tweet” y “User”
+Para el ejercicio 2_1 reutilizar en la medida que sea posible las siguientes propiedades:
 
-- Creación de las propiedades: 
+“sioc:content” del vocabulario SIOC para la propiedad “content”
 
-	“content”: Un Tweet tiene un contenido (content) de tipo texto.
-
-	“creator”: Un Tweet tiene un creador (creator) de tipo User
-
-	“userAccount”: Un User tiene una cuenta de usuario.
-
-- Creación de los individuos:
-
-“tweet111” de la claseTweet
-
-“user201” de la clase User
-
+“sioc:has_creator” del vocabulario SIOC para la propiedad “creator
 -->
 
 <?xml version="1.0" encoding="UTF-8"?>
@@ -33,15 +21,15 @@ xmlns:myNameSpace="http://www.example.com/myprimerrdf#"
 xml:base="http://www.example.com/myprimerrdf"
 xmlsn:="http://www.example.com/myprimerrdf#">
 
-<!-- Creación de las clases RDFS: “Tweet” y “User” -->
+
 
 <rdfs:Class rdf:about="#User"/>
 <rdfs:Class rdf:about="#Tweet"/>
 
-<!-- Creación de las propiedades: “content”,“creator”, “userAccount” -->
 
-<rdf:Property rdf: about ="#content"/>
-<rdf:Property rdf: about ="#creator"/>
+
+<rdf:Property sioc: about ="#content"/>
+<rdf:Property sioc: about ="#has_creator"/>
 <rdf:Property rdf: about ="#userAccount"/>
 
 
@@ -49,25 +37,30 @@ xmlsn:="http://www.example.com/myprimerrdf#">
 	<rdfs:domain rdf:resource ="Tweet">
 </rdfs:Property>
 
-<rdfs:Property rdf: about ="#creator">
+<rdfs:Property sioc: about ="#has_creator">
 	<rdfs:domain rdf:resource ="Tweet">
 	<rdfs:range rdf:resource ="User">
 </rdfs:Property>
+
+
 
 <rdfs:Property rdf: about ="#userAccount">
 	<rdfs:domain rdf:resource ="User">
 </rdfs:Property>
 
-<!-- Creación de los individuos: “tweet111”, user201”-->
 
 
 <Tweet rdf:about="tweet111">
-
+<creator rdf:resource:"user211" />
+<sioc:content>Un tweet</sioc:content>
 </rdf:Tweet>
 
 
 <User rdf:about="user201">
+<userAccount>@pepe</userAccount>
+</User>
 
+<User rdf:about="user211">
 </User>
 
 
