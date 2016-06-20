@@ -1,0 +1,322 @@
+<?xml version="1.0"?>
+
+
+<!DOCTYPE rdf:RDF [
+    <!ENTITY www "http://www.ejercicio2_4.owl#" >
+    <!ENTITY owl "http://www.w3.org/2002/07/owl#" >
+    <!ENTITY xsd "http://www.w3.org/2001/XMLSchema#" >
+    <!ENTITY rdfs "http://www.w3.org/2000/01/rdf-schema#" >
+    <!ENTITY rdf "http://www.w3.org/1999/02/22-rdf-syntax-ns#" >
+]>
+
+
+<rdf:RDF xmlns="http://www.ejercicio2_4.owl#"
+     xml:base="http://www.ejercicio2_4.owl"
+     xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#"
+     xmlns:www="http://www.ejercicio2_4.owl#"
+     xmlns:owl="http://www.w3.org/2002/07/owl#"
+     xmlns:xsd="http://www.w3.org/2001/XMLSchema#"
+     xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#">
+    <owl:Ontology rdf:about="http://www.ejercicio2_4.owl"/>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Object Properties
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    
+
+
+    <!-- http://www.ejercicio2_4.owl#Creador -->
+
+    <owl:ObjectProperty rdf:about="&www;Creador">
+        <rdfs:domain rdf:resource="&www;Post"/>
+        <rdfs:range rdf:resource="&www;Usuario"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.ejercicio2_4.owl#Followers -->
+
+    <owl:ObjectProperty rdf:about="&www;Followers">
+        <rdfs:domain rdf:resource="&www;UsuarioTwitter"/>
+        <rdfs:range rdf:resource="&www;UsuarioTwitter"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.ejercicio2_4.owl#Friends -->
+
+    <owl:ObjectProperty rdf:about="&www;Friends">
+        <rdfs:domain rdf:resource="&www;UsuarioFacebook"/>
+        <rdfs:range rdf:resource="&www;UsuarioFacebook"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.ejercicio2_4.owl#almacena -->
+
+    <owl:ObjectProperty rdf:about="&www;almacena">
+        <rdfs:domain rdf:resource="&www;Canal"/>
+        <rdfs:range rdf:resource="&www;Post"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.ejercicio2_4.owl#representa -->
+
+    <owl:ObjectProperty rdf:about="&www;representa">
+        <rdfs:domain rdf:resource="&www;Canal"/>
+        <rdfs:range rdf:resource="&www;Entidad"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Data properties
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    
+
+
+    <!-- http://www.ejercicio2_4.owl#Contenido -->
+
+    <owl:DatatypeProperty rdf:about="&www;Contenido">
+        <rdfs:domain rdf:resource="&www;Post"/>
+        <rdfs:range rdf:resource="&xsd;string"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://www.ejercicio2_4.owl#FechaCreacion -->
+
+    <owl:DatatypeProperty rdf:about="&www;FechaCreacion">
+        <rdfs:domain rdf:resource="&www;Post"/>
+        <rdfs:range rdf:resource="&xsd;dateTime"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://www.ejercicio2_4.owl#Likes -->
+
+    <owl:DatatypeProperty rdf:about="&www;Likes">
+        <rdfs:domain rdf:resource="&www;PublicacionFacebook"/>
+        <rdfs:range rdf:resource="&xsd;integer"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://www.ejercicio2_4.owl#Retweets -->
+
+    <owl:DatatypeProperty rdf:about="&www;Retweets">
+        <rdfs:domain rdf:resource="&www;Tweet"/>
+        <rdfs:range rdf:resource="&xsd;integer"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://www.ejercicio2_4.owl#UserAccount -->
+
+    <owl:DatatypeProperty rdf:about="&www;UserAccount">
+        <rdfs:domain rdf:resource="&www;Usuario"/>
+        <rdfs:range rdf:resource="&xsd;string"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Classes
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    
+
+
+    <!-- http://www.ejercicio2_4.owl#Canal -->
+
+    <owl:Class rdf:about="&www;Canal"/>
+    
+
+
+    <!-- http://www.ejercicio2_4.owl#Empresa -->
+
+    <owl:Class rdf:about="&www;Empresa">
+        <rdfs:subClassOf rdf:resource="&www;Entidad"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.ejercicio2_4.owl#Entidad -->
+
+    <owl:Class rdf:about="&www;Entidad"/>
+    
+
+
+    <!-- http://www.ejercicio2_4.owl#Persona -->
+
+    <owl:Class rdf:about="&www;Persona">
+        <rdfs:subClassOf rdf:resource="&www;Entidad"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.ejercicio2_4.owl#Post -->
+
+    <owl:Class rdf:about="&www;Post"/>
+    
+
+
+    <!-- http://www.ejercicio2_4.owl#PublicacionFacebook -->
+
+    <owl:Class rdf:about="&www;PublicacionFacebook">
+        <rdfs:subClassOf rdf:resource="&www;Post"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.ejercicio2_4.owl#Tweet -->
+
+    <owl:Class rdf:about="&www;Tweet">
+        <rdfs:subClassOf rdf:resource="&www;Post"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.ejercicio2_4.owl#Usuario -->
+
+    <owl:Class rdf:about="&www;Usuario"/>
+    
+
+
+    <!-- http://www.ejercicio2_4.owl#UsuarioFacebook -->
+
+    <owl:Class rdf:about="&www;UsuarioFacebook">
+        <rdfs:subClassOf rdf:resource="&www;Usuario"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.ejercicio2_4.owl#UsuarioTwitter -->
+
+    <owl:Class rdf:about="&www;UsuarioTwitter">
+        <rdfs:subClassOf rdf:resource="&www;Usuario"/>
+    </owl:Class>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Individuals
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    
+
+
+    <!-- http://www.ejercicio2_4.owl#Fb101 -->
+
+    <owl:NamedIndividual rdf:about="&www;Fb101">
+        <rdf:type rdf:resource="&www;PublicacionFacebook"/>
+        <Likes rdf:datatype="&xsd;integer">123</Likes>
+        <FechaCreacion rdf:datatype="&xsd;dateTime">2015-02-12T23:34:45</FechaCreacion>
+        <Contenido rdf:datatype="&xsd;string">Un post sobre Joaquin Sabina</Contenido>
+        <Creador rdf:resource="&www;User201"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.ejercicio2_4.owl#Joaquín_Sabina -->
+
+    <owl:NamedIndividual rdf:about="&www;Joaquín_Sabina">
+        <rdf:type rdf:resource="&www;Persona"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.ejercicio2_4.owl#P301 -->
+
+    <owl:NamedIndividual rdf:about="&www;P301">
+        <rdf:type rdf:resource="&www;Canal"/>
+        <almacena rdf:resource="&www;Fb101"/>
+        <representa rdf:resource="&www;Joaquín_Sabina"/>
+        <almacena rdf:resource="&www;Tweet111"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.ejercicio2_4.owl#Tweet111 -->
+
+    <owl:NamedIndividual rdf:about="&www;Tweet111">
+        <rdf:type rdf:resource="&www;Tweet"/>
+        <FechaCreacion rdf:datatype="&xsd;dateTime">2015-03-12T23:34:45</FechaCreacion>
+        <Contenido rdf:datatype="&xsd;string">Un tweet de Joaquín Sabina</Contenido>
+        <Creador rdf:resource="&www;User211"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.ejercicio2_4.owl#User201 -->
+
+    <owl:NamedIndividual rdf:about="&www;User201">
+        <rdf:type rdf:resource="&www;UsuarioFacebook"/>
+        <UserAccount rdf:datatype="&xsd;string">er_Antonio</UserAccount>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.ejercicio2_4.owl#User202 -->
+
+    <owl:NamedIndividual rdf:about="&www;User202">
+        <rdf:type rdf:resource="&www;UsuarioFacebook"/>
+        <UserAccount rdf:datatype="&xsd;string">pecosa</UserAccount>
+        <Friends rdf:resource="&www;User201"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.ejercicio2_4.owl#User211 -->
+
+    <owl:NamedIndividual rdf:about="&www;User211">
+        <rdf:type rdf:resource="&www;UsuarioTwitter"/>
+        <UserAccount rdf:datatype="&xsd;string">@pepe</UserAccount>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // General axioms
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    <rdf:Description>
+        <rdf:type rdf:resource="&owl;AllDisjointClasses"/>
+        <owl:members rdf:parseType="Collection">
+            <rdf:Description rdf:about="&www;PublicacionFacebook"/>
+            <rdf:Description rdf:about="&www;Tweet"/>
+            <rdf:Description rdf:about="&www;UsuarioFacebook"/>
+            <rdf:Description rdf:about="&www;UsuarioTwitter"/>
+        </owl:members>
+    </rdf:Description>
+</rdf:RDF>
+
+
+
+<!-- Generated by the OWL API (version 3.4.2) http://owlapi.sourceforge.net -->
+
