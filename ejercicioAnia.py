@@ -110,7 +110,7 @@ if __name__ == '__main__':
 		(label, lang) = result
 		resource = getLinkedmdbResource (label, lang, endpoint);
 
-	# print "\n---------------------\n"
+	print "\n---------------------\n"
 
 	lista = getLocalLabel("instancia4");
 	print lista
