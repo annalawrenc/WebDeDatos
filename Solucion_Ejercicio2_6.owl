@@ -265,6 +265,7 @@
         <FechaCreacion rdf:datatype="&xsd;dateTime">2015-03-12T23:34:45</FechaCreacion>
         <Contenido rdf:datatype="&xsd;string">Un tweet de Joaquín Sabina</Contenido>
         <Creador rdf:resource="&www;User211"/>
+        <Creador rdf:resource="&www;User214"/>
     </owl:NamedIndividual>
     
 
@@ -294,6 +295,12 @@
         <rdf:type rdf:resource="&www;UsuarioTwitter"/>
         <UserAccount rdf:datatype="&xsd;string">@pepe</UserAccount>
     </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.ejercicio2_4.owl#User214 -->
+
+    <owl:NamedIndividual rdf:about="&www;User214"/>
     
 
 

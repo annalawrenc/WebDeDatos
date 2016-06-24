@@ -1,0 +1,28 @@
+wod@wod-VirtualBox:~$ python /home/wod/media/windows/ejercicioAnia.py
+The label: Alicia Keys
+The lang: en
+[(u'Alicia Keys', u'en')]
+The resource: http://dbpedia.org/resource/Alicia_Keys
+
+---------------------
+
+The label: Batman
+The label: Batman
+The lang: es
+The label: Batman
+The lang: en
+[(u'Batman', None), (u'Batman', u'es'), (u'Batman', u'en')]
+
+->The resource: http://data.linkedmdb.org/resource/film/2
+->The resource: http://data.linkedmdb.org/resource/film/3
+->The resource: http://data.linkedmdb.org/resource/film/12583
+
+
+The label: Un vino cosmopolita
+The label: Un vino cosmopolita
+The lang: es
+The label: Un vino cosmopolita
+The lang: en
+[(u'Un vino cosmopolita', None), (u'Un vino cosmopolita', u'es'), (u'Un vino cosmopolita', u'en')]
+
+->The resource: http://webenemasuno.linkeddata.es/elviajero/resource/Guide/20060513ELPVIALBV_5.TES
