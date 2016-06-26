@@ -1,0 +1,106 @@
+wod@wod-VirtualBox:~/media/windows$ python ejercicioAnia2.py
+The label: Alicia Keys
+The lang: en
+[(u'Alicia Keys', u'en')]
+The resource: http://dbpedia.org/resource/Alicia_Keys
+birthName: Alicia Augello Cook
+None
+birthDate: 1981-01-25
+None
+birthPlace: http://dbpedia.org/resource/New_York
+birthPlace: http://dbpedia.org/resource/Hell's_Kitchen,_Manhattan
+None
+Occupation: http://dbpedia.org/resource/Songwriter
+Occupation: http://dbpedia.org/resource/Singing
+Occupation: http://dbpedia.org/resource/Actor
+Occupation: http://dbpedia.org/resource/Pianist
+Occupation: http://dbpedia.org/resource/Record_producer
+Occupation: *
+None
+MusicalArtist: http://dbpedia.org/resource/28_Thousand_Days
+MusicalArtist: http://dbpedia.org/resource/No_One_(Alicia_Keys_song)
+MusicalArtist: http://dbpedia.org/resource/Brand_New_Me_(Alicia_Keys_song)
+MusicalArtist: http://dbpedia.org/resource/Girl_on_Fire_(song)
+MusicalArtist: http://dbpedia.org/resource/We_Are_Here_(Alicia_Keys_song)
+MusicalArtist: http://dbpedia.org/resource/Every_Little_Bit_Hurts
+MusicalArtist: http://dbpedia.org/resource/Try_Sleeping_with_a_Broken_Heart
+MusicalArtist: http://dbpedia.org/resource/Teenage_Love_Affair
+MusicalArtist: http://dbpedia.org/resource/Don't_Give_Up_(Peter_Gabriel_and_Kate_Bush_song)
+MusicalArtist: http://dbpedia.org/resource/Unbreakable_(Alicia_Keys_song)
+MusicalArtist: http://dbpedia.org/resource/A_Woman's_Worth
+MusicalArtist: http://dbpedia.org/resource/You_Don't_Know_My_Name
+MusicalArtist: http://dbpedia.org/resource/Another_Way_to_Die
+MusicalArtist: http://dbpedia.org/resource/My_Boo_(Usher_and_Alicia_Keys_song)
+MusicalArtist: http://dbpedia.org/resource/Empire_State_of_Mind_(Part_II)_Broken_Down
+MusicalArtist: http://dbpedia.org/resource/Wait_Til_You_See_My_Smile
+MusicalArtist: http://dbpedia.org/resource/Fire_We_Make
+MusicalArtist: http://dbpedia.org/resource/Un-Thinkable_(I'm_Ready)
+MusicalArtist: http://dbpedia.org/resource/Diary_(Alicia_Keys_song)
+MusicalArtist: http://dbpedia.org/resource/New_Day_(50_Cent_song)
+MusicalArtist: http://dbpedia.org/resource/New_Day_(Alicia_Keys_song)
+MusicalArtist: http://dbpedia.org/resource/Tears_Always_Win
+MusicalArtist: http://dbpedia.org/resource/Girlfriend_(Alicia_Keys_song)
+MusicalArtist: http://dbpedia.org/resource/Karma_(Alicia_Keys_song)
+MusicalArtist: http://dbpedia.org/resource/Put_It_in_a_Love_Song
+MusicalArtist: http://dbpedia.org/resource/How_Come_U_Don't_Call_Me_Anymore%3F__How_Come_You_Don't_Call_Me__1
+MusicalArtist: http://dbpedia.org/resource/If_I_Ain't_Got_You
+MusicalArtist: http://dbpedia.org/resource/Fallin'
+MusicalArtist: http://dbpedia.org/resource/Superwoman_(Alicia_Keys_song)
+MusicalArtist: http://dbpedia.org/resource/Like_You'll_Never_See_Me_Again
+MusicalArtist: http://dbpedia.org/resource/Doesn't_Mean_Anything
+MusicalArtist: http://dbpedia.org/resource/It's_On_Again
+MusicalArtist: http://dbpedia.org/resource/Brotha_(Angie_Stone_song)__Brotha_Part_II__1
+None
+
+---------------------
+
+The label: Batman
+The label: Batman
+The lang: es
+The label: Batman
+The lang: en
+[(u'Batman', None), (u'Batman', u'es'), (u'Batman', u'en')]
+
+->The resource: http://data.linkedmdb.org/resource/film/2
+->The resource: http://data.linkedmdb.org/resource/film/3
+->The resource: http://data.linkedmdb.org/resource/film/12583
+
+None
+
+->Date: 1989-06-23
+->Date: 1966-07-30
+None
+
+->RunTime: 126
+->RunTime: 105
+None
+
+
+None
+
+None
+
+None
+
+
+None
+
+None
+
+None
+
+---------------------
+
+The label: Un vino cosmopolita
+The label: Un vino cosmopolita
+The lang: es
+The label: Un vino cosmopolita
+The lang: en
+[(u'Un vino cosmopolita', None), (u'Un vino cosmopolita', u'es'), (u'Un vino cosmopolita', u'en')]
+
+->The resource: http://webenemasuno.linkeddata.es/elviajero/resource/Guide/20060513ELPVIALBV_5.TES
+
+
+
+
+
