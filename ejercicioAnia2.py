@@ -75,10 +75,10 @@ def getLinkedmdbMovieDirector (label, lang, endpoint):
 	sparqlLinkedmdb = SPARQLWrapper(endpoint)
 
 	if (lang):
-		queryString = "PREFIX dc: <http://purl.org/dc/terms/> PREFIX movie: <http://data.linkedmdb.org/resource/movie/> PREFIX foaf: <http://xmlns.com/foaf/0.1/> SELECT ?s WHERE {movie:director_name foaf:made <http://data.linkedmdb.org/resource/film/2>}" 
+		queryString = "PREFIX dc: <http://purl.org/dc/terms/> PREFIX movie: <http://data.linkedmdb.org/resource/movie/> PREFIX foaf: <http://xmlns.com/foaf/0.1/> SELECT ?s ?o WHERE {?s dc:title \"" + label + "\"@" +lang + ". ?d foaf:made ?s . ?d movie:director_name ?o}"
 	
 	else:
-		queryString = "PREFIX dc: <http://purl.org/dc/terms/> PREFIX movie: <http://data.linkedmdb.org/resource/movie/> PREFIX foaf: <http://xmlns.com/foaf/0.1/> SELECT ?s WHERE {movie:director_name foaf:made <http://data.linkedmdb.org/resource/film/2>}" 
+		queryString = "PREFIX dc: <http://purl.org/dc/terms/> PREFIX movie: <http://data.linkedmdb.org/resource/movie/> PREFIX foaf: <http://xmlns.com/foaf/0.1/> SELECT ?s ?o WHERE {?s dc:title \"" + label + "\" . ?d foaf:made ?s . ?d movie:director_name ?o}"
 	
 	sparqlLinkedmdb.setQuery(queryString)
 	sparqlLinkedmdb.setReturnFormat(JSON)
@@ -86,18 +86,20 @@ def getLinkedmdbMovieDirector (label, lang, endpoint):
 	results = query.convert()
 	print
 	for result in results["results"]["bindings"]:
-		resource = result["s"]["value"]
-		print "->Director: " + resource
+		film = result["s"]["value"]
+		director = result["o"]["value"]
+		resource = film + "->Director: " + director
+		print  resource
 		
 def getLinkedmdbMovieDate (label, lang, endpoint):
 
 	sparqlLinkedmdb = SPARQLWrapper(endpoint)
 
 	if (lang):
-		queryString = "PREFIX dc: <http://purl.org/dc/terms/> PREFIX movie: <http://data.linkedmdb.org/resource/movie/> SELECT ?o WHERE { ?s dc:title \"" + label + "\"@" +lang + ". ?s movie:initial_release_date ?o}" 
+		queryString = "PREFIX dc: <http://purl.org/dc/terms/> PREFIX movie: <http://data.linkedmdb.org/resource/movie/> SELECT ?s ?o WHERE { ?s dc:title \"" + label + "\"@" +lang + ". ?s movie:initial_release_date ?o}" 
 	
 	else:
-		queryString = "PREFIX dc: <http://purl.org/dc/terms/> PREFIX movie: <http://data.linkedmdb.org/resource/movie/> SELECT ?o WHERE { ?s dc:title \"" + label + "\" . ?s movie:initial_release_date ?o}" 
+		queryString = "PREFIX dc: <http://purl.org/dc/terms/> PREFIX movie: <http://data.linkedmdb.org/resource/movie/> SELECT ?s ?o WHERE { ?s dc:title \"" + label + "\" . ?s movie:initial_release_date ?o}" 
 	
 	sparqlLinkedmdb.setQuery(queryString)
 	sparqlLinkedmdb.setReturnFormat(JSON)
@@ -105,18 +107,20 @@ def getLinkedmdbMovieDate (label, lang, endpoint):
 	results = query.convert()
 	print
 	for result in results["results"]["bindings"]:
-		resource = result["o"]["value"]
-		print "->Date: " + resource
+ 		film = result["s"]["value"] 
+		date = result["o"]["value"] 
+		resource = film + "->Date: " + date
+ 		print resource 
 
 def getLinkedmdbMovieRunTime (label, lang, endpoint):
 
 	sparqlLinkedmdb = SPARQLWrapper(endpoint)
 
 	if (lang):
-		queryString = "PREFIX dc: <http://purl.org/dc/terms/> PREFIX movie: <http://data.linkedmdb.org/resource/movie/> SELECT ?o WHERE { ?s dc:title \"" + label + "\"@" +lang + ". ?s movie:runtime ?o}" 
+		queryString = "PREFIX dc: <http://purl.org/dc/terms/> PREFIX movie: <http://data.linkedmdb.org/resource/movie/> SELECT ?s ?o WHERE { ?s dc:title \"" + label + "\"@" +lang + ". ?s movie:runtime ?o}" 
 	
 	else:
-		queryString = "PREFIX dc: <http://purl.org/dc/terms/> PREFIX movie: <http://data.linkedmdb.org/resource/movie/> SELECT ?o WHERE { ?s dc:title \"" + label + "\" . ?s movie:runtime ?o}" 
+		queryString = "PREFIX dc: <http://purl.org/dc/terms/> PREFIX movie: <http://data.linkedmdb.org/resource/movie/> SELECT ?s ?o WHERE { ?s dc:title \"" + label + "\" . ?s movie:runtime ?o}" 
 	
 	sparqlLinkedmdb.setQuery(queryString)
 	sparqlLinkedmdb.setReturnFormat(JSON)
@@ -124,8 +128,10 @@ def getLinkedmdbMovieRunTime (label, lang, endpoint):
 	results = query.convert()
 	print
 	for result in results["results"]["bindings"]:
-		resource = result["o"]["value"]
-		print "->RunTime: " + resource
+		film = result["s"]["value"] 
+		runtime = result["o"]["value"]
+		resource = film + "->RunTime: " + runtime 
+		print  resource 
 		
 		
 def getWebenemasunoResource (label, lang, endpoint):
@@ -195,17 +201,20 @@ def getDBpediaOccupation (label, lang, endpoint):
 def getDBpediaMusicalArtist (label, lang, endpoint):
 
 	sparqlDBPedia = SPARQLWrapper(endpoint)
+
+	artist = str(getDBpediaResource (label, lang, endpoint))
+
 	if (lang):
-		queryString = "PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#> PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> PREFIX foaf: <http://xmlns.com/foaf/0.1/> PREFIX dbo: <http://dbpedia.org/ontology/>  PREFIX dbr:<http://dbpedia.org/resource/> SELECT ?s WHERE {?s dbo:musicalArtist <http://dbpedia.org/resource/Alicia_Keys>} " 
+		queryString = "PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#> PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> PREFIX foaf: <http://xmlns.com/foaf/0.1/> PREFIX dbo: <http://dbpedia.org/ontology/>  PREFIX dbr:<http://dbpedia.org/resource/> SELECT ?c WHERE {?s rdfs:label \"" + label + "\"@" +lang + " . ?c dbo:musicalArtist ?s} "
 	else:
-		queryString = "PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#> PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> PREFIX foaf: <http://xmlns.com/foaf/0.1/> PREFIX dbo: <http://dbpedia.org/ontology/> PREFIX dbr:<http://dbpedia.org/resource/> SELECT ?s WHERE {?s dbo:musicalArtist <http://dbpedia.org/resource/Alicia_Keys> } " 
+		queryString = "PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#> PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> PREFIX foaf: <http://xmlns.com/foaf/0.1/> PREFIX dbo: <http://dbpedia.org/ontology/> PREFIX dbr:<http://dbpedia.org/resource/> SELECT ?c WHERE {?s rdfs:label \"" + label + "\" . ?c dbo:musicalArtist ?s } "
 	
 	sparqlDBPedia.setQuery(queryString)
 	sparqlDBPedia.setReturnFormat(JSON)
 	query   = sparqlDBPedia.query()
 	results = query.convert()
 	for result in results["results"]["bindings"]:
-		resource = result["s"]["value"]
+		resource = result["c"]["value"]
 		print "MusicalArtist: " + resource
 		
 		
@@ -225,21 +234,7 @@ def getDBpediaBirthDate (label, lang, endpoint):
 		resource = result["o"]["value"]
 		print "birthDate: " + resource		
 
-#def getWebenemasunoContent (label, lang, endpoint):
 
-#	sparqlWebenemasuno = SPARQLWrapper(endpoint)
-#	if (lang):
-#		queryString = "PREFIX opmo: <http://openprovenance.org/model/opmo#> SELECT ?s WHERE { ?s sioc:title \"" + label + "\"@" +lang + ". ?s opmo:content ?o}"
-#	else:
-#		queryString = "PREFIX opmo: <http://openprovenance.org/model/opmo#> SELECT ?s WHERE { ?s sioc:title \"" + label + "\" . ?s opmo:content ?o}"
-#	sparqlWebenemasuno.setQuery(queryString)
-#	sparqlWebenemasuno.setReturnFormat(JSON)
-#	query   = sparqlWebenemasuno.query()
-#	results = query.convert()
-#	print
-#	for result in results["results"]["bindings"]:
-#		resource = result["s"]["value"]
-# 		print "->Content: " + resource
 		
 if __name__ == '__main__':
 
@@ -296,9 +291,7 @@ if __name__ == '__main__':
 	for result in lista:
 		(label, lang) = result
 		resource = getWebenemasunoResource (label, lang, endpoint);
-
-#		vino = getWebenemasunoContent (label, lang, endpoint);		
-#		print vino		
+		
 
 		
 #if __name__ == '__main__':

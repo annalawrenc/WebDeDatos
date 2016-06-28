@@ -17,6 +17,7 @@ Occupation: http://dbpedia.org/resource/Pianist
 Occupation: http://dbpedia.org/resource/Record_producer
 Occupation: *
 None
+The resource: http://dbpedia.org/resource/Alicia_Keys
 MusicalArtist: http://dbpedia.org/resource/28_Thousand_Days
 MusicalArtist: http://dbpedia.org/resource/No_One_(Alicia_Keys_song)
 MusicalArtist: http://dbpedia.org/resource/Brand_New_Me_(Alicia_Keys_song)
@@ -65,14 +66,17 @@ The lang: en
 ->The resource: http://data.linkedmdb.org/resource/film/3
 ->The resource: http://data.linkedmdb.org/resource/film/12583
 
+http://data.linkedmdb.org/resource/film/3->Director: Leslie H. Martinson
+http://data.linkedmdb.org/resource/film/2->Director: Tim Burton
+http://data.linkedmdb.org/resource/film/12583->Director: Lambert Hillyer
 None
 
-->Date: 1989-06-23
-->Date: 1966-07-30
+http://data.linkedmdb.org/resource/film/2->Date: 1989-06-23
+http://data.linkedmdb.org/resource/film/3->Date: 1966-07-30
 None
 
-->RunTime: 126
-->RunTime: 105
+http://data.linkedmdb.org/resource/film/2->RunTime: 126
+http://data.linkedmdb.org/resource/film/3->RunTime: 105
 None
 
 
@@ -101,6 +105,4 @@ The lang: en
 ->The resource: http://webenemasuno.linkeddata.es/elviajero/resource/Guide/20060513ELPVIALBV_5.TES
 
 
-
-
-
+wod@wod-VirtualBox:~/media/windows$ 
